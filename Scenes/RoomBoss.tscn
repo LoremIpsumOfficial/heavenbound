@@ -35,7 +35,7 @@ size = Vector2(451, 109)
 
 [node name="Player" parent="." unique_id=28099015 instance=ExtResource("1_gutuq")]
 z_index = -5
-position = Vector2(3297, -180)
+position = Vector2(-2169, 1296)
 collision_layer = 3
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2114250492]

@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://0mc536g7if0f" path="res://BossOne/boss_decide_state.gd" id="6_qo80t"]
 [ext_resource type="Texture2D" uid="uid://csuqah13yujgf" path="res://BossOne/spritesheet_telegraph.png" id="7_3jgq7"]
 [ext_resource type="Script" uid="uid://7qqyh5ietjp1" path="res://BossOne/boss_telegraph.gd" id="7_6xh1r"]
+[ext_resource type="Script" uid="uid://x8pqjsg7thfj" path="res://BossOne/boss_hurt_box.gd" id="8_6xh1r"]
 [ext_resource type="Script" uid="uid://dg7csewh1c76r" path="res://BossOne/boss_attack_state.gd" id="8_eiy3p"]
 [ext_resource type="Script" uid="uid://cwjltnslcep4h" path="res://BossOne/boss_recover_state.gd" id="9_ecp7n"]
 [ext_resource type="Script" uid="uid://rpbdwvdors4d" path="res://BossOne/boss_staggered_state.gd" id="10_3jgq7"]
@@ -272,7 +273,7 @@ size = Vector2(72, 296)
 size = Vector2(120, 296)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8cpd"]
-size = Vector2(1032, 376)
+size = Vector2(2364.625, 987.5)
 
 [node name="BossOne" type="CharacterBody2D" unique_id=1376592960]
 script = ExtResource("1_hq2td")
@@ -283,7 +284,6 @@ unique_name_in_owner = true
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_w1hta")
 animation = &"Attack"
-frame_progress = 0.7285359
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1351564209]
 position = Vector2(-4, 28)
@@ -294,9 +294,11 @@ shape = SubResource("RectangleShape2D_2eu7o")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxArea" unique_id=1054260292]
 shape = SubResource("RectangleShape2D_hq2td")
 
-[node name="HurtBoxArea" type="Area2D" parent="." unique_id=404858263 groups=["enemy_hurtbox"]]
+[node name="HurtBoxArea" type="Area2D" parent="." unique_id=404858263 node_paths=PackedStringArray("owner_enemy") groups=["enemy_hurtbox"]]
 collision_layer = 32
 collision_mask = 16
+script = ExtResource("8_6xh1r")
+owner_enemy = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxArea" unique_id=1159374696 groups=["enemy_hurtbox"]]
 position = Vector2(4, 28)
@@ -306,6 +308,7 @@ debug_color = Color(0.80784315, 0.11764706, 0.07058824, 0.41960785)
 [node name="DetectionArea" type="Area2D" parent="." unique_id=835676672]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=632506090]
+position = Vector2(0, -186.25)
 shape = SubResource("RectangleShape2D_r8cpd")
 debug_color = Color(0, 0.84056264, 0.33853802, 0.41960785)
 
@@ -347,7 +350,6 @@ unique_name_in_owner = true
 script = ExtResource("13_r8cpd")
 
 [node name="DebugStateLabel" type="Label" parent="." unique_id=1344660829]
-visible = false
 offset_left = -24.0
 offset_top = -248.0
 offset_right = 16.0

@@ -7,6 +7,7 @@
 size = Vector2(308, 6)
 
 [node name="SpearProjectile" type="Area2D" unique_id=682722272]
+collision_mask = 16
 script = ExtResource("1_b4yaj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=777373556]
