@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://x55lcsbp0r6t" path="res://Sprites/Levels/Cave_parallax/Stallag2.png" id="12_2ln2y"]
 [ext_resource type="Texture2D" uid="uid://c52o1ea8dahld" path="res://Sprites/Levels/CaveSprites/CaveBackground.png" id="13_o3g7d"]
 [ext_resource type="PackedScene" uid="uid://bex1l8atmhqe8" path="res://BossOne/BossOne.tscn" id="14_2ln2y"]
-[ext_resource type="Texture2D" uid="uid://b5g0lhpvqqyuw" path="res://Sprites/Tutorial/text5.png" id="15_nhcj0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rdw2d"]
 size = Vector2(4954, 87)
@@ -267,10 +266,5 @@ texture = ExtResource("13_o3g7d")
 
 [node name="BossOne" parent="." unique_id=1376592960 instance=ExtResource("14_2ln2y")]
 position = Vector2(-2901, 1192)
-
-[node name="Text5" type="Sprite2D" parent="." unique_id=2017236340]
-position = Vector2(-627.8146, 135.5)
-scale = Vector2(1.0365536, 1.0365535)
-texture = ExtResource("15_nhcj0")
 
 [connection signal="body_entered" from="LiftTransition3" to="LiftTransition3" method="_on_body_entered"]
